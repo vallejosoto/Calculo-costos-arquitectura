@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Cotización de Servicios de Arquitectura</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <h1>Calculadora de Cotización - Servicios de Arquitectura</h1>
+
+    <form id="cotizacionForm">
+        <h2>Ingrese los datos para su cotización:</h2>
+
+        <div>
+            <h3>Diseño Arquitectónico (por m²)</h3>
+            <div>
+                <label for="m2Arquitectonico">Metros Cuadrados:</label>
+                <input type="number" id="m2Arquitectonico" min="0" value="0">
+
+                <label for="tipoArquitectonico">Tipo de Proyecto:</label>
+                <select id="tipoArquitectonico">
+                    <option value="residencial">Residencial</option>
+                    <option value="industrialBodegas">Bodegas</option>
+                    <option value="hospitalario">Hospitalario</option>
+                    <option value="industrial">Industrial</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <h3>Diseño Estructural (por m²)</h3>
+            <div>
+                <label for="m2Estructural">Metros Cuadrados:</label>
+                <input type="number" id="m2Estructural" min="0" value="0">
+            </div>
+        </div>
+
+        <div>
+            <h3>Elaboración de Imágenes Realistas (por unidad)</h3>
+            <div>
+                <label for="cantidadImagenes">Cantidad de Imágenes:</label>
+                <input type="number" id="cantidadImagenes" min="0" value="0">
+            </div>
+        </div>
+
+        <div>
+            <h3>Levantamiento Topográfico (por m²)</h3>
+            <div>
+                <label for="m2Topografico">Metros Cuadrados:</label>
+                <input type="number" id="m2Topografico" min="0" value="0">
+            </div>
+        </div>
+
+        <div>
+            <h3>Estudio de Suelos (por unidad)</h3>
+            <div>
+                <label for="cantidadEstudios">Cantidad de Estudios:</label>
+                <input type="number" id="cantidadEstudios" min="0" value="0">
+            </div>
+        </div>
+
+        <div>
+            <h3>Vuelo de Drone (por m²)</h3>
+            <div>
+                <label for="horasDrone">Metros Cuadrados:</label>
+                <input type="number" id="horasDrone" min="0" value="0">
+            </div>
+        </div>
+
+        <div>
+            <button type="button" onclick="calcularCotizacion()">Calcular Cotización</button>
+        </div>
+        <div>
+            <button type="button" id="volver_cotizar">Volver a cotizar</button>
+        </div>
+    </form>
+    <div id="resultado"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
