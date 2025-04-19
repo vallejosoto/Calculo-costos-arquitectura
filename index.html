@@ -5,81 +5,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Cotización de Servicios de Arquitectura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./estilos/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-    <h1>Calculadora de Cotización - Servicios de Arquitectura</h1>
+    <div class="fondo" id="inicio">
+        <header>
+            <a href="./index.html"><img src="./img/logo-arteha.png" alt="Logo Arteha"></a>
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#secc_proyectos">Proyectos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#secc_cotiza">cotización</a>
+                            </li>
+                        </ul>
+                        <span class="navbar-text">
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="hero">
+                <h1 class="animate__animated animate__fadeInDown">Laboratorio de Arquitectura, Tecnología y Hábitat</h1>
+            </section>
+        </main>
+    </div>
 
-    <form id="cotizacionForm">
-        <h2>Ingrese los datos para su cotización:</h2>
-
+    <div class="general_proyectos" id="secc_proyectos">
+        <h2 class=encabezados> Nuestros Proyectos</h2>
+        <div id="filtros">
+            <span class="filtro" data-uso="todos">Todos</span>
+            <span class="filtro" data-uso="residencial">Residencial</span>
+            <span class="filtro" data-uso="turismo">turismo</span>
+            <span class="filtro" data-uso="equipamiento">equipamiento</span>
+        </div>
+        <section class="proyectos">
+            <div class="proyecto" data-uso="turismo">
+                <img src="./img/coworking_interior.jpg" alt="Render interior coworking">
+                <h3>coworking</h3>
+                <p>Espacio funcional y moderno diseñado para fomentar creatividad, colaboración y productividad en
+                    ambientes
+                    inspiradores.</p>
+            </div>
+            <div class="proyecto" data-uso="equipamiento">
+                <img src="./img/casa_vital.png" alt="Render casa vital">
+                <h3>Casa vital</h3>
+                <p>Vivienda para adultos mayores, enfocada en bienestar, accesibilidad, seguridad y conexión con la
+                    naturaleza.
+                </p>
+            </div>
+            <div class="proyecto" data-uso="equipamiento">
+                <img src="./img/conejera.png" alt="Render conejera">
+                <h3>Hábitat para Conejos</h3>
+                <p>Diseño sostenible que prioriza bienestar animal, integrando áreas verdes y materiales respetuosos con
+                    el
+                    medio ambiente.</p>
+            </div>
+            <div class="proyecto" data-uso="turismo">
+                <img src="./img/glamping-1.png" alt="Glamping 1 Santa Elena">
+                <h3>Glamping Santa Elena</h3>
+                <p>Experiencia de lujo al aire libre, combinando diseño exclusivo con confort en entornos naturales.</p>
+            </div>
+            <div class="proyecto" data-uso="turismo">
+                <img src="./img/glamping-2.png" alt="Glamping 2 Santa Elena">
+                <h3>Glamping Santa Elena</h3>
+                <p>Refugio ecológico único que fusiona arquitectura contemporánea con paisajes naturales.</p>
+            </div>
+            <div class="proyecto" data-uso="residencial">
+                <img src="./img/render_l_y_a_2.png" alt="Render casa Leo y Andrea">
+                <h3>Casa de campo</h3>
+                <p>Refugio acogedor en entorno rural, destacando confort, funcionalidad y conexión con la naturaleza.
+                </p>
+            </div>
+            <div class="proyecto" data-uso="equipamiento">
+                <img src="./img/exterior_capilla.png" alt="Render Capilla">
+                <h3>Capilla</h3>
+                <p>Lugar espiritual con diseño minimalista, atmósfera íntima y elementos arquitectónicos que evocan
+                    serenidad
+                </p>
+            </div>
+            <div class="proyecto" data-uso="equipamiento">
+                <img src="./img/gimnasio_aerea.jpg" alt=" Render gimnasio">
+                <h3>Gimnasio</h3>
+                <p>Instalación moderna, equipada con tecnología avanzada, diseñada para potenciar salud, rendimiento y
+                    bienestar
+                    integral.</p>
+            </div>
+            <div class="proyecto" data-uso="equipamiento">
+                <img src="./img/interior_social.png" alt="Render interior Salón social">
+                <h3>Salón social</h3>
+                <p>Espacio versátil y elegante, ideal para eventos, con diseño funcional que fomenta interacción y
+                    convivencia.
+                </p>
+            </div>
+            <div class="proyecto" data-uso="equipamiento">
+                <img src="./img/13_LABORATORIO ORINOQUIA RTX.jpg" alt="Render laboratorio orinoquía">
+                <h3>Laboratorio</h3>
+                <p>Laboratorio especializado, eficiente y seguro para el procesamiento óptimo de material vegetal de
+                    alta calidad.
+                </p>
+            </div>
+            <div class="proyecto" data-uso="residencial">
+                <img src="./img/14.ACTUALIZACION_LAS_TAPIAS_3.jpg" alt="Render casa las tapias">
+                <h3>Casa Las Tapias</h3>
+                <p>Casa contemporánea que reinterpreta saberes locales, integrándose armónicamente al entorno y su
+                    identidad cultural.
+                </p>
+            </div>
+            <div class="proyecto" data-uso="residencial">
+                <img src="./img/7_SALA SOPETRAN RTX.jpg" alt="Render Casa en Sopetran">
+                <h3>Casa Sopetrán</h3>
+                <p>Casa de recreo en Sopetrán, diseñada para el descanso, el paisaje y la vida al aire libre.
+                </p>
+            </div>
+            <div class="proyecto" data-uso="turismo">
+                <img src="./img/AEREO 1 CASA LOTE 22.jpg" alt="Render casa L22">
+                <h3>Finca L22</h3>
+                <p>Casa de recreo donde interior y exterior se conectan fluidamente para disfrutar cada espacio al
+                    máximo.
+                </p>
+            </div>
+            <div class="proyecto" data-uso="residencial">
+                <img src="./img/EXTERIOR 1 CASA EL RETIRO.jpg" alt="Render casa el retiro">
+                <h3>Casa EL Retiro</h3>
+                <p>Vivienda de segunda residencia, pensada para escapar de la rutina y reconectar con lo esencial.
+                </p>
+            </div>
+    </div>
+    <section class="servicios_arteha" id="secc_cotiza">
+        <h2 class="encabezados">Cotiza nuestros servicios</h2>
         <div>
-            <h3>Diseño Arquitectónico (por m²)</h3>
-            <div>
-                <label for="m2Arquitectonico">Metros Cuadrados:</label>
-                <input type="number" id="m2Arquitectonico" min="0" value="0">
+            <form id="cotizacionForm">
+                <div>
+                    <h3>Diseño Arquitectónico (m²)</h3>
+                    <div>
+                        <label for="m2Arquitectonico">Metros Cuadrados:</label>
+                        <input type="number" id="m2Arquitectonico" min="0" value="0">
 
-                <label for="tipoArquitectonico">Tipo de Proyecto:</label>
-                <select id="tipoArquitectonico">
-                    <option value="residencial">Residencial</option>
-                    <option value="industrialBodegas">Bodegas</option>
-                    <option value="hospitalario">Hospitalario</option>
-                    <option value="industrial">Industrial</option>
-                </select>
+                        <label for="tipoArquitectonico">Tipo de Proyecto:</label>
+                        <select id="tipoArquitectonico">
+                            <option value="residencial">Residencial</option>
+                            <option value="industrialBodegas">Bodegas</option>
+                            <option value="hospitalario">Hospitalario</option>
+                            <option value="industrial">Industrial</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Diseño Estructural (m²)</h3>
+                    <div>
+                        <label for="m2Estructural">Metros Cuadrados:</label>
+                        <input type="number" id="m2Estructural" min="0" value="0">
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Renders (número)</h3>
+                    <div>
+                        <label for="cantidadImagenes">Cantidad de Imágenes:</label>
+                        <input type="number" id="cantidadImagenes" min="0" value="0">
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Levantamiento Topográfico (m²)</h3>
+                    <div>
+                        <label for="m2Topografico">Metros Cuadrados:</label>
+                        <input type="number" id="m2Topografico" min="0" value="0">
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Estudio de Suelos (unidad)</h3>
+                    <div>
+                        <label for="cantidadEstudios">Cantidad de Estudios:</label>
+                        <input type="number" id="cantidadEstudios" min="0" value="0">
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Vuelo de Drone (m²)</h3>
+                    <div>
+                        <label for="horasDrone">Metros Cuadrados:</label>
+                        <input type="number" id="horasDrone" min="0" value="0">
+                    </div>
+                </div>
+                <div id="botones_ejecutar">
+                    <span class="botones_accion" id="ejectuar_cotizar">Calcular cotización</span>
+                    <span class="botones_accion" id="volver_cotizar">Volver a cotizar</span>
+                </div>
+            </form>
+            <div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11066.34843987766!2d-75.58117824044143!3d6.2630492710063494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2sco!4v1730118032407!5m2!1ses!2sco"
+                    width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
-
-        <div>
-            <h3>Diseño Estructural (por m²)</h3>
-            <div>
-                <label for="m2Estructural">Metros Cuadrados:</label>
-                <input type="number" id="m2Estructural" min="0" value="0">
-            </div>
-        </div>
-
-        <div>
-            <h3>Elaboración de Imágenes Realistas (por unidad)</h3>
-            <div>
-                <label for="cantidadImagenes">Cantidad de Imágenes:</label>
-                <input type="number" id="cantidadImagenes" min="0" value="0">
-            </div>
-        </div>
-
-        <div>
-            <h3>Levantamiento Topográfico (por m²)</h3>
-            <div>
-                <label for="m2Topografico">Metros Cuadrados:</label>
-                <input type="number" id="m2Topografico" min="0" value="0">
-            </div>
-        </div>
-
-        <div>
-            <h3>Estudio de Suelos (por unidad)</h3>
-            <div>
-                <label for="cantidadEstudios">Cantidad de Estudios:</label>
-                <input type="number" id="cantidadEstudios" min="0" value="0">
-            </div>
-        </div>
-
-        <div>
-            <h3>Vuelo de Drone (por m²)</h3>
-            <div>
-                <label for="horasDrone">Metros Cuadrados:</label>
-                <input type="number" id="horasDrone" min="0" value="0">
-            </div>
-        </div>
-
-        <div>
-            <button type="button" onclick="calcularCotizacion()">Calcular Cotización</button>
-        </div>
-        <div>
-            <button type="button" id="volver_cotizar">Volver a cotizar</button>
-        </div>
-    </form>
+    </section>
     <div id="resultado"></div>
+    <footer class="pie_de_pagina_pr">
+        <div>
+            <h2>Arteha Lab<h2>
+                    <p>2024 <br>
+                        Medellín - Colombia
+                    <p>
+                    <p> Diseñado por Daniel Vallejo Soto</p>
+                    <p id="clima-medellin">Cargando clima...</p>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/artehalab/" target="_blank"><img src="./img/logotipo-de-instagram.png"
+                    alt=" Logotipo instagram"></a>
+            <a href="#inicio"> <img src="./img/flecha-hacia-arriba.png" alt="Ir al comienzo de esta página"></a>
+        </div>
+    </footer>
+
 
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

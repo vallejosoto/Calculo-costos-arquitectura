@@ -1,3 +1,13 @@
+document.querySelectorAll('.filtro').forEach(x => {
+    x.addEventListener('click', () => {
+        const usoSeleccionado = x.getAttribute('data-uso');
+        document.querySelectorAll('.proyecto').forEach(p => {
+            const uso = p.getAttribute('data-uso');
+            p.style.display = (usoSeleccionado === 'todos' || uso === usoSeleccionado) ? 'block' : 'none';
+        });
+    });
+});
+
 function calcularCotizacion() {
     const preciosBase = {
         disenoArquitectonico: {
@@ -10,7 +20,7 @@ function calcularCotizacion() {
         imagenesRealistas: 400000,
         levantamientoTopografico: 15000,
         estudioSuelos: 800000,
-        vueloDrone: 250000
+        vueloDrone: 250
     };
 
     let resultadoHTML = '<h2>Resultado de la Cotización</h2>';
@@ -117,7 +127,7 @@ function calcularCotizacion() {
         resultadoHTML += `
           <div>
               <p><strong>Vuelo de Drone</strong></p>
-              <p>Horas: ${horasDrone} hora(s)</p>
+              <p>Área: ${horasDrone} m²</p>
               <p>Precio: ${(precioServicio)}</p>
           </div>
       `;
@@ -138,8 +148,12 @@ function calcularCotizacion() {
 
     // Mostrar el resultado
     document.getElementById('resultado').innerHTML = resultadoHTML;
+
+    localStorage.setItem('ultimaCotizacion', resultadoHTML);
 }
 
+const boton_cotizar = document.getElementById("ejectuar_cotizar");
+boton_cotizar.addEventListener("click", calcularCotizacion);
 // Función para resetear todos los valores del formulario
 function resetearFormulario() {
     document.getElementById('m2Arquitectonico').value = 0;
@@ -149,7 +163,20 @@ function resetearFormulario() {
     document.getElementById('cantidadEstudios').value = 0;
     document.getElementById('horasDrone').value = 0;
     document.getElementById('resultado').innerHTML = '';
+    localStorage.removeItem('ultimaCotizacion');
 }
 
 const boton_volver_cotizar = document.getElementById("volver_cotizar");
 boton_volver_cotizar.addEventListener("click", resetearFormulario);
+
+fetch('https://api.open-meteo.com/v1/forecast?latitude=6.25&longitude=-75.56&current_weather=true')
+    .then(res => res.json())
+    .then(data => {
+        const clima = data.current_weather;
+        const climaTexto = `Temperatura actual: ${clima.temperature}°C`;
+        document.getElementById('clima-medellin').textContent = climaTexto;
+    })
+    .catch(err => {
+        document.getElementById('clima-medellin').textContent = 'No se pudo cargar el clima';
+        console.error('Error al obtener clima:', err);
+    });
